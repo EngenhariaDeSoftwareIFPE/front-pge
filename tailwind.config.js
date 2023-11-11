@@ -17,16 +17,12 @@ module.exports = {
         'secundary-green': '#185228',
       },
       width: {
+        '450px': '450px',
         '550px': '550px',
-        '600px': '600px',
-        '700px': '700px',
-        '1920px': '1920px,'
       },
       height: {
+        '450px': '450px',
         '550px': '550px',
-        '600px': '600px',
-        '700px': '700px',
-        '1080px': '1080px',
       },
       borderRadius: {
         '40px': '40px',
