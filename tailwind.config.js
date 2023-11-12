@@ -15,18 +15,25 @@ module.exports = {
       colors: {
         'primary-green': "#3AC25E",
         'secundary-green': '#185228',
+        'button-green': '#154924'
       },
       width: {
+        '180px': '180px',
+        '345px': '345px',
         '298px': '298px',
         '450px': '450px',
         '550px': '550px',
       },
       height: {
+        '35px': '35px',
+        '40px': '40px',
         '44px': '44px',
         '450px': '450px',
         '550px': '550px',
       },
       borderRadius: {
+        '10px': '10px',
+        '12px': '12px',
         '40px': '40px',
         '40px-right': '0 40px 40px 0',
       },
@@ -34,7 +41,18 @@ module.exports = {
         'monteserrat': ['Montserrat', 'sans-serif'],
       }, 
       fontSize: {
-        '16px': '16px'
+        '12px': '12px',
+        '16px': '16px',
+        '20px': '20px',
+        '30px': '30px',
+      },
+      margin: {
+        '21px': '21px',
+        '26px': '26px',
+        '41px': '41px',
+      },
+      padding: {
+        '22px': '22px',
       }
     },
   },
