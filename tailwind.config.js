@@ -17,10 +17,12 @@ module.exports = {
         'secundary-green': '#185228',
       },
       width: {
+        '298px': '298px',
         '450px': '450px',
         '550px': '550px',
       },
       height: {
+        '44px': '44px',
         '450px': '450px',
         '550px': '550px',
       },
@@ -28,6 +30,12 @@ module.exports = {
         '40px': '40px',
         '40px-right': '0 40px 40px 0',
       },
+      fontFamily: {
+        'monteserrat': ['Montserrat', 'sans-serif'],
+      }, 
+      fontSize: {
+        '16px': '16px'
+      }
     },
   },
   plugins: [],
