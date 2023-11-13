@@ -1,4 +1,5 @@
 import BackgroundAuth from "@/components/BackgroundAuth"
+import FormLogin from "@/components/FormLogin"
 
 export const metadata = {
     title: 'PGE | Login',
@@ -6,9 +7,11 @@ export const metadata = {
 }
 
 export default function Login() {
+    const component = <FormLogin/>
+
     return (
         <>
-            <BackgroundAuth/>
+            <BackgroundAuth component={component}/>
         </>
     )
 }
