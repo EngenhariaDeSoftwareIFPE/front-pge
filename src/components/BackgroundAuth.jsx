@@ -6,7 +6,7 @@ export default function BackgroundAuth({component}) {
     }
 
     return (
-        <div className="flex items-center justify-center w-screen h-screen">
+        <div className="flex items-center justify-center w-screen h-screen bg-gradient-to-t from-gradient-primary via-gradient-secundary to-white">
             <div className="bg-primary-green w-550px h-550px rounded-40px">
                 {component}
             </div>

@@ -15,7 +15,9 @@ module.exports = {
       colors: {
         'primary-green': "#3AC25E",
         'secundary-green': '#185228',
-        'button-green': '#154924'
+        'button-green': '#154924',
+        'gradient-primary': '#C9ECCB',
+        'gradient-secundary': '#CDF0D6',
       },
       width: {
         '180px': '180px',
