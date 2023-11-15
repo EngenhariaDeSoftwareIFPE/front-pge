@@ -1,4 +1,5 @@
 import BackgroundSquare from "@/components/BackgroundSquare";
+import FormCadastreStudent from "@/components/FormCadastreStudent";
 
 export const metadata = {
     title: 'PGE | Cadastro Estudante',
@@ -6,9 +7,11 @@ export const metadata = {
 }
 
 export default function Student() {
+    const component = <FormCadastreStudent/>
+
     return (
         <>
-          <BackgroundSquare/>  
+          <BackgroundSquare component={component}/>  
         </>
     )
 }
