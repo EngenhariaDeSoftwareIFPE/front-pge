@@ -8,7 +8,8 @@ export default function InputLogin(props) {
 
     return (
         <input 
-            className={`w-345px h-40px rounded-12px p-22px font-semibold hover:border-b-2 border-secundary-green transition duration-300 ease-in-out ${data.marginTop} ${data.marginBottom}`}
+            className={`w-[345px] h-[40px] rounded-[12px] p-[22px] font-semibold hover:border-b-2 border-secundary-green transition duration-300 ease-in-out ${data.marginTop} ${data.marginBottom}`}
+            id={`${data.id}`}
             placeholder={`${data.placeHolder}`}
         />
     )
