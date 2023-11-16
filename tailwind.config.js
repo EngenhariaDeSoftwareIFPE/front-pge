@@ -18,6 +18,7 @@ module.exports = {
         'button-green': '#154924',
         'gradient-primary': '#C9ECCB',
         'gradient-secundary': '#CDF0D6',
+        'primary-white': '#F1F2F5',
       },
       width: {
         '180px': '180px',
