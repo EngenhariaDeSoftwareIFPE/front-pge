@@ -16,7 +16,10 @@ module.exports = {
       colors: {
         'primary-green': "#3AC25E",
         'secundary-green': '#185228',
-        'button-green': '#154924'
+        'button-green': '#154924',
+        'gradient-primary': '#C9ECCB',
+        'gradient-secundary': '#CDF0D6',
+        'primary-white': '#F1F2F5',
       },
       width: {
         '180px': '180px',
@@ -26,8 +29,8 @@ module.exports = {
         '550px': '550px',
       },
       height: {
-        '35px': '35px',
         '40px': '40px',
+        '45px': '45px',
         '44px': '44px',
         '450px': '450px',
         '550px': '550px',
