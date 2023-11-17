@@ -11,6 +11,7 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'barra-de-navegacao': 'url(/barra_de_selecao.svg)',
       },
       colors: {
         'primary-green': "#3AC25E",

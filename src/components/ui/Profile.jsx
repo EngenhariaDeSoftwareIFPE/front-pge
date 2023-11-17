@@ -8,7 +8,7 @@ const Profile = () => {
   }
 
   return (
-    <div>
+    <a href='/dados'>
         <div className='flex me-11 items-center'>
             <div className="w-16 h-16 bg-zinc-300 rounded-full border-2 border-green-500" />
             <div className='me-5 ms-2'>
@@ -19,7 +19,7 @@ const Profile = () => {
               <img src="ph_bell.svg" alt="Notificações" className='h-full' />
             </div>
         </div>
-    </div>
+    </a>
   )
 }
 
