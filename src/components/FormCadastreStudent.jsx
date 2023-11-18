@@ -56,12 +56,6 @@ export default function FormCadastreStudent() {
                     width={widths.email}
                     mr={marginRight.div2}
                 />
-                {/* <InputCadastreStudent
-                    id={d.course.id}
-                    label={d.course.label}
-                    placeHolder={d.course.placeHolder}
-                    width={widths.course}
-                /> */}
                 <SelectCadastreStudent
                     id={d.course.id}
                     label={d.course.label}

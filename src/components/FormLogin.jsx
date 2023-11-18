@@ -21,7 +21,7 @@ const button = {
 export default function FormLogin() {
     return (
         <form className="flex items-center justify-center flex-col w-full h-full">
-            <label className="text-white text-[30px] font-monteserrat">{d.data.login}</label>
+            <label className="text-white text-[30px]">{d.data.login}</label>
             <InputLogin
                 id={d.email.id}
                 placeHolder={d.email.placeHolder}
