@@ -2,6 +2,7 @@ import ButtonSendAuth from "./ui/ButtonGreen"
 import InputLogin from "./ui/InputLogin"
 import * as d from "../data/formLogin"
 
+//Medidas componentes
 const email = {
     mt: 'mt-[26px]',
     mb: 'mb-[21px]',

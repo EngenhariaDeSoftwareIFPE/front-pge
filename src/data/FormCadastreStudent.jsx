@@ -25,6 +25,11 @@ export const course = {
     id: 'course',
     label: 'Curso',
     placeHolder: 'Selecione o seu curso',
+    options: [
+        'Técnico de Agropecuária',
+        'Técnico de Agroindústria',
+        'Licenciatura em Música',
+    ],
 }
 
 export const password = {
