@@ -7,7 +7,10 @@ export default function BackgroundAuth({component}) {
                 {component}
             </div>
             <div className="flex flex-col items-center justify-center bg-secundary-green w-[450px] h-[450px] rounded-r-[40px]">
-                <img src="logo-auth.svg" alt="Logo do Pge"/>
+                <img 
+                    src="logo-auth.svg" 
+                    alt="Logo do Pge"
+                />
                 <p className="text-white text-[16px] font-monteserrat w-[298px]">{d.data.title}</p>
                 <p className="text-white text-[16px] font-monteserrat w-[298px]">{d.data.subtitle}</p>
             </div>
