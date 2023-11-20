@@ -1,12 +1,12 @@
 import React from 'react'
 
-const FormUserData = () => {
+const FormUserData = ({ onButtonClick }) => {
   return (
     <div className='h-3/4 flex flex-col w-full'>
         <div className='ms-14'>
             <div className='flex mb-4'>
                 <h2 className=' text-black text-xl font-semibold'>Dados cadastrais</h2>
-                <button>
+                <button onClick={onButtonClick}>
                     <img src="ic-pencil.svg" alt="Editar dados cadastrais" className="ms-3 w-4"/>
                 </button>
             </div>

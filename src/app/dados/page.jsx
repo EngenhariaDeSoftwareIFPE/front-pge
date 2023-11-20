@@ -1,26 +1,21 @@
-import FormUserData from "@/components/FormUserData"
-import NavBarHorizontal from "@/components/navBar/NavBarHorizontal"
-import NavBarVertical from "@/components/navBar/NavBarVertical"
+import React from 'react';
+import NavBarHorizontal from "@/components/navBar/NavBarHorizontal";
+import HandleUserData from '@/components/HandleUserData';
 
 export const metadata = {
-    title: 'PGE | Dados do Usuário',
-    description: 'Dados do Usuário PGE',
+  title: 'PGE | Dados do Usuário',
+  description: 'Dados do Usuário PGE',
 }
 
 const Dados = () => {
-  return (
+    return (
     <>
-        <div className="w-screen h-screen font-monteserrat">
-            <NavBarHorizontal/>
-            <div className="flex">
-                <NavBarVertical/>
-                <div className="mt-14 w-full">
-                    <FormUserData/>
-                </div>
-            </div>
-        </div>
+      <div className="w-screen h-screen font-monteserrat">
+        <NavBarHorizontal />
+        <HandleUserData/>
+      </div>
     </>
-  )
+  );
 }
 
-export default Dados
+export default Dados;
