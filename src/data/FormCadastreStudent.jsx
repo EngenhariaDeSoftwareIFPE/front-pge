@@ -51,3 +51,7 @@ export const buttonWhite = {
 export const buttonGreen = {
     text: 'Criar conta',
 }
+
+export const buttonSave = {
+    text: 'Salvar',
+}
