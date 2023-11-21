@@ -1,6 +1,17 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Modal from '../Modal';
+import ButtonWhite from '../ui/ButtonWhite';
+import ButtonRed from '../ui/ButtonRed';
+
+const widths = {
+  buttonGreen: 'w-[150px]'
+}
+
+const height = {
+  buttonGreen: 'h-[40px]',
+}
 
 const NavBarVertical = () => {
   const [menuItems] = useState([
@@ -14,6 +25,8 @@ const NavBarVertical = () => {
   useEffect(() => {
     setCurrentPath(window.location.pathname);
   }, []);
+
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div className="w-52 h-[617px] bg-green-500 flex flex-col justify-between">
@@ -34,10 +47,28 @@ const NavBarVertical = () => {
           ))}
         </ul>
       </div>
-      <button className="flex w-full mb-14 text-white font-semibold text-sm justify-center">
+      <button onClick={() => setShowModal(true)} className="flex w-full mb-14 text-white font-semibold text-sm justify-center">
         <img className="me-2" src="ic-sign-out.svg" alt="fazer logout" />
         Sair
       </button>
+      <Modal bgColor="bg-[#3AC25E]" isVisible={showModal} onClose={() => setShowModal(false)}>
+          <img className='w-[100px]' src="ic-shield-check.svg" alt="Ícone escudo de verificação" />
+          <p className='text-white text-2xl font-medium'>Tem certeza que deseja sair do sistema?</p>
+          <div className='flex w-full justify-around'>
+            <ButtonWhite
+              text="Cancelar"
+              width={widths.buttonGreen}
+              height={height.buttonGreen}
+              onClick={() => setShowModal(false)}
+            />
+            <ButtonRed
+              text="Sair"
+              width={widths.buttonGreen}
+              height={height.buttonGreen}
+              onClick={() => setShowModal(true)}
+            />
+          </div>
+      </Modal>
     </div>
   );
 };
