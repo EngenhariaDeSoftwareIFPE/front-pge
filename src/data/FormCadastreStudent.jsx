@@ -55,3 +55,7 @@ export const buttonGreen = {
 export const buttonSave = {
     text: 'Salvar',
 }
+
+export const buttonChangePassword = {
+    text: 'Alterar senha',
+}

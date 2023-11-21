@@ -1,12 +1,12 @@
 import React from 'react'
 
-const FormUserData = ({ onButtonClick }) => {
+const FormUserData = ({ onOpenDataChange, onOpenPasswordChange }) => {
   return (
     <div className='h-3/4 flex flex-col w-full'>
         <div className='ms-14'>
             <div className='flex mb-4'>
                 <h2 className=' text-black text-xl font-semibold'>Dados cadastrais</h2>
-                <button onClick={onButtonClick}>
+                <button onClick={() => onOpenDataChange()}>
                     <img src="ic-pencil.svg" alt="Editar dados cadastrais" className="ms-3 w-4"/>
                 </button>
             </div>
@@ -34,7 +34,7 @@ const FormUserData = ({ onButtonClick }) => {
         <div className='bg-green-500 w-full h-[1px] mt-14'></div>
         <div className='mt-14 ms-14'>
             <h2 className=' text-black text-xl font-semibold'>Segurança</h2>
-            <button className="mt-3 w-44 h-10 bg-green-500 rounded-xl text-sm font-medium flex items-center p-4 justify-between">
+            <button onClick={() => onOpenPasswordChange()} className="mt-3 w-44 h-10 bg-green-500 rounded-xl text-sm font-medium flex items-center p-4 justify-between">
                 <div className='flex'>
                     <img src="ic-lock.svg" alt="" className='w-6'/>
                     <div className='flex flex-col items-start  ms-2'>
