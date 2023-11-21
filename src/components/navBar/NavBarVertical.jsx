@@ -48,11 +48,11 @@ const NavBarVertical = () => {
         </ul>
       </div>
       <button onClick={() => setShowModal(true)} className="flex w-full mb-14 text-white font-semibold text-sm justify-center">
-        <img className="me-2" src="ic-sign-out.svg" alt="fazer logout" />
+        <img className="me-2" src="ic-sign-out.svg" alt="Ícone logout" />
         Sair
       </button>
       <Modal bgColor="bg-[#3AC25E]" isVisible={showModal} onClose={() => setShowModal(false)}>
-          <img className='w-[100px]' src="ic-shield-check.svg" alt="Ícone escudo de verificação" />
+          <img className='w-[85px]' src="ic-sign-out.svg" alt="Ícone logout" />
           <p className='text-white text-2xl font-medium'>Tem certeza que deseja sair do sistema?</p>
           <div className='flex w-full justify-around'>
             <ButtonWhite
