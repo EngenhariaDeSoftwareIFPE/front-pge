@@ -1,7 +1,10 @@
-import React from 'react';
+"use client";
+
+import React, {useState} from 'react';
 import InputCadastreStudent from './ui/InputCadastreStudent';
 import * as d from "../data/FormCadastreStudent";
 import ButtonGreen from './ui/ButtonGreen';
+import Modal from './Modal';
 
 const widths = {
     fullname: 'w-[440px]',
@@ -16,8 +19,7 @@ const height = {
 }
 
 const FormDataChange = ({ onButtonClick }) => {
-  const windowHeight = window.innerHeight;
-  const componentHeight = windowHeight - 100; 
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div className='w-full h-[600px] flex items-center justify-center font-monteserrat'>
@@ -62,9 +64,20 @@ const FormDataChange = ({ onButtonClick }) => {
                     text={d.buttonSave.text}
                     width={widths.buttonGreen}
                     height={height.buttonGreen}
+                    onClick={() => setShowModal(true)}
                 />
             </div>
         </div>
+        <Modal bgColor={"bg-[#3AC25E]"} isVisible={showModal} onClose={() => setShowModal(false)}>
+            <img className='w-[100px]' src="ic-shield-check.svg" alt="Ícone escudo de verificação" />
+            <p className='text-white text-2xl font-medium'>Dados alterados com sucesso!</p>
+            <ButtonGreen
+                text="OK"
+                width={widths.buttonGreen}
+                height={height.buttonGreen}
+                onClick={onButtonClick}
+            />
+        </Modal>
     </div>
   );
 };
