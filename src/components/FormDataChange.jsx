@@ -2,7 +2,7 @@
 
 import React, {useState} from 'react';
 import InputCadastreStudent from './ui/InputCadastreStudent';
-import * as d from "../data/FormCadastreStudent";
+import * as d from "../data/formCadastreStudent";
 import ButtonGreen from './ui/ButtonGreen';
 import Modal from './Modal';
 

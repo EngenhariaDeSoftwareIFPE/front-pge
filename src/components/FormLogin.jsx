@@ -34,7 +34,7 @@ export default function FormLogin() {
                 marginTop={password.mt}
                 marginBottom={password.mb}
             />
-            <a href="#" className="w-[345px] text-end text-white font-monteserrat font-bold mb-[41px] hover:underline">{d.data.forgotPassword}</a>
+            <a href={d.paths.passwordReset} className="w-[345px] text-end text-white font-monteserrat font-bold mb-[41px] hover:underline">{d.data.forgotPassword}</a>
             <ButtonSendAuth
                 text={d.button.text}
                 width={button.width}
@@ -42,7 +42,7 @@ export default function FormLogin() {
             />
             <p className="text-white font-monteserrat font-medium">
                 {d.data.haveNotAccount} 
-                <a href="#" className="text-white font-monteserrat font-bold ml-1 hover:underline">{d.data.createAccount}</a>
+                <a href={d.paths.cadastre} className="text-white font-monteserrat font-bold ml-1 hover:underline">{d.data.createAccount}</a>
             </p>
         </form>  
     )

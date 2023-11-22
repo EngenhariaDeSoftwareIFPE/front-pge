@@ -11,7 +11,7 @@ export default function Student() {
 
     return (
         <>
-          <BackgroundSquare component={component}/>  
+          <BackgroundSquare component={component} />  
         </>
     )
 }

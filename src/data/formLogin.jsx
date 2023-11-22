@@ -18,3 +18,8 @@ export const password = {
 export const button = {
     text: 'Entrar',
 }
+
+export const paths = {
+    passwordReset: '/password_reset',
+    cadastre: '/cadastre/student',
+}

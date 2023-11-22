@@ -1,8 +1,15 @@
-import InputCadastreStudent from "./ui/InputCadastreStudent"
+"use client";
+
 import * as d from "../data/formCadastreStudent"
+import * as v from "../validations/formCadastreStudent"
+
+import InputCadastreStudent from "./ui/InputCadastreStudent"
 import ButtonWhite from "./ui/ButtonWhite"
 import ButtonGreen from "./ui/ButtonGreen"
 import SelectCadastreStudent from "./ui/SelectCadastreStudent"
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 //Medidas componentes
 const widths = {
@@ -28,9 +35,24 @@ const marginRight = {
     buttonWhite: 'mr-[62px]'
 }
 
+// Função de validação formulário
+const validateForm = (data) => {
+    const result = v.schema.safeParse(data);
+
+    if (result.success) {
+        console.log('Dados válido:', result.data);
+    }
+}
+
 export default function FormCadastreStudent() {
+    const router = useRouter();
+    const [ student, setStudent ] = useState(d.model)
+
     return (
-        <form className="w-[965px] h-[550px] px-[54px] py-[47px] mb-[49px]">
+        <form 
+            className="w-[965px] h-[550px] px-[54px] py-[47px] mb-[49px]"
+            onSubmit={(e) => e.preventDefault()}
+        >
             <h1 className="text-white text-[30px] font-semibold">{d.data.title}</h1>
             <h2 className="text-white text-[20px] font-medium">{d.data.subtitle}</h2>
             <div className="flex flex-row mt-[47px]">
@@ -40,12 +62,16 @@ export default function FormCadastreStudent() {
                     placeHolder={d.fullName.placeHolder}
                     width={widths.fullname}
                     mr={marginRight.div1}
+                    student={student}
+                    setStudent={setStudent}
                 />
                 <InputCadastreStudent
                     id={d.registrationNumber.id}
                     label={d.registrationNumber.label}
                     placeHolder={d.registrationNumber.placeHolder}
                     width={widths.registrationNumber}
+                    student={student}
+                    setStudent={setStudent}
                 />
             </div>
             <div className="flex flex-row mt-[38px]">
@@ -55,6 +81,8 @@ export default function FormCadastreStudent() {
                     placeHolder={d.email.placeHolder}
                     width={widths.email}
                     mr={marginRight.div2}
+                    student={student}
+                    setStudent={setStudent}
                 />
                 <SelectCadastreStudent
                     id={d.course.id}
@@ -62,6 +90,8 @@ export default function FormCadastreStudent() {
                     placeHolder={d.course.placeHolder}
                     options={d.course.options}
                     width={widths.course}
+                    student={student}
+                    setStudent={setStudent}
                 />
             </div>
             <div className="flex flex-row mt-[38px] mb-[57px]">
@@ -71,12 +101,16 @@ export default function FormCadastreStudent() {
                     placeHolder={d.password.placeHolder}
                     width={widths.password}
                     mr={marginRight.div3}
+                    student={student}
+                    setStudent={setStudent}
                 />
                 <InputCadastreStudent
                     id={d.passwordConfirm.id}
                     label={d.passwordConfirm.label}
                     placeHolder={d.passwordConfirm.placeHolder}
                     width={widths.passwordConfirm}
+                    student={student}
+                    setStudent={setStudent}
                 />
             </div>
             <div className="flex justify-center ">
@@ -85,11 +119,13 @@ export default function FormCadastreStudent() {
                     width={widths.buttonWhite}
                     height={heights.buttonWhite}
                     mr={marginRight.buttonWhite}
+                    onClick={() => router.push(d.paths.login)}
                 />
                 <ButtonGreen
                     text={d.buttonGreen.text}
                     width={widths.buttonGreen}
                     height={heights.buttonGreen}
+                    onClick={() => validateForm(student)}
                 />
             </div>
         </form>
