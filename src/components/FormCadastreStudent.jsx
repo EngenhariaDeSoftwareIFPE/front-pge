@@ -10,6 +10,7 @@ import SelectCadastreStudent from "./ui/SelectCadastreStudent"
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Modal from "./Modal";
 
 //Medidas componentes
 const widths = {
@@ -20,7 +21,8 @@ const widths = {
     password: 'w-[355px]',
     passwordConfirm: 'w-[355px]',
     buttonWhite: 'w-[140px]',
-    buttonGreen: 'w-[180px]'
+    buttonGreen: 'w-[180px]',
+    buttonGreenPopup: 'w-[180px]',
 }
 
 const heights = {
@@ -35,19 +37,22 @@ const marginRight = {
     buttonWhite: 'mr-[62px]'
 }
 
-// Função de validação formulário
-const validateForm = (data) => {
-    const result = v.schema.safeParse(data);
-
-    if (result.success) {
-        console.log('Dados válido:', result.data);
-    }
-}
 
 export default function FormCadastreStudent() {
     const router = useRouter();
+    
+    const [showModal, setShowModal] = useState(false);
     const [ student, setStudent ] = useState(d.model)
-
+    
+    // Função de validação formulário
+    const validateForm = (data) => {
+        const result = v.schema.safeParse(data);
+    
+        if (result.success) {
+            setShowModal(true);
+        }
+    }
+    
     return (
         <form 
             className="w-[965px] h-[550px] px-[54px] py-[47px] mb-[49px]"
@@ -128,6 +133,16 @@ export default function FormCadastreStudent() {
                     onClick={() => validateForm(student)}
                 />
             </div>
+            <Modal bgColor={"bg-[#3AC25E]"} isVisible={showModal} onClose={() => setShowModal(false)}>
+                <img className='w-[100px]' src="../ic-shield-check.svg" alt="Ícone escudo de verificação" />
+                <p className='text-white text-2xl font-medium'>{d.dataPopup.title}</p>
+                <ButtonGreen
+                    text={d.dataPopup.buttonGreenText}
+                    width={widths.buttonGreenPopup}
+                    height={heights.buttonGreen}
+                    onClick={() => router.push(d.paths.login)}
+                />
+            </Modal>
         </form>
     )
 }

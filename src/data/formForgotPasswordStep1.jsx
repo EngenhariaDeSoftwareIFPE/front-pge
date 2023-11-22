@@ -15,3 +15,8 @@ export const buttonWhite = {
 export const buttonGreen = {
     text: 'Enviar',
 }
+
+export const paths = {
+    login: '/login',
+    send: '#',
+}
