@@ -19,7 +19,13 @@ export const button = {
     text: 'Entrar',
 }
 
+export const model = {
+    email: '',
+    password: '',
+}
+
 export const paths = {
     passwordReset: '/password_reset',
     cadastre: '/cadastre/student',
+    home: '/home',
 }
