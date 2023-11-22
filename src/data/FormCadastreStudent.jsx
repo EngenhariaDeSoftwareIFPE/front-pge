@@ -64,11 +64,16 @@ export const model = {
     fullName: '',
     registrationNumber: '',
     email: '',
-    course: 'Licenciatura em música',
+    course: '',
     password: '',
     passwordConfirm: '',
 }
 
 export const paths = {
     login: '/login',
+}
+
+export const dataPopup = {
+    title: 'Conta criada com sucesso!',
+    buttonGreenText: 'OK',
 }

@@ -9,14 +9,22 @@ export default function SelectCadastreStudent(props) {
         placeHolder: props.placeHolder,
         width: props.width,
         mr: props.mr,
-        options: props.options
+        options: props.options,
+        student: props.student,
+        setStudent: props.setStudent,
     }
 
     const [selectedValue, setSelectedValue] = useState(data.placeHolder);
     const [isArrowUp, setIsArrowUp] = useState(false);
 
     const handleChange = (event) => {
-        setSelectedValue(event.target.value);
+        const selectedOption = event.target.value;
+
+        setSelectedValue(selectedOption);
+        data.setStudent(prevStudent => ({
+            ...prevStudent,
+            ['course']: selectedOption
+        }))
     };
 
     const toggleArrowDirection = () => {
@@ -33,10 +41,7 @@ export default function SelectCadastreStudent(props) {
 
     return (
         <div className="relative inline-block">
-            <label 
-                htmlFor={data.id} 
-                className="text-[18px] text-white font-medium"
-            >
+            <label className="text-[18px] text-white font-medium">
                 {data.label}
             </label>
             <div className="relative">
