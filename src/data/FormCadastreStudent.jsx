@@ -59,3 +59,21 @@ export const buttonSave = {
 export const buttonChangePassword = {
     text: 'Alterar senha',
 }
+
+export const model = {
+    fullName: '',
+    registrationNumber: '',
+    email: '',
+    course: '',
+    password: '',
+    passwordConfirm: '',
+}
+
+export const paths = {
+    login: '/login',
+}
+
+export const dataPopup = {
+    title: 'Conta criada com sucesso!',
+    buttonGreenText: 'OK',
+}
