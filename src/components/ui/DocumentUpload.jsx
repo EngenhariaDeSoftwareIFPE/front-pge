@@ -49,8 +49,8 @@ const DocumentUpload = ({ title }) => {
     <div>
       <div className="text-black text-lg font-semibold">{title}</div>
       {file ? (
-        <div className="w-[460px] h-[68px] bg-green-500 rounded-xl flex justify-between p-3 items-center">
-          <div className="w-[216px] h-6 text-black text-lg font-normal">
+        <div className="w-[460px] min-h-[68px] bg-green-500 rounded-xl flex justify-between p-3 items-center">
+          <div className="w-[216px] min-h-6 text-black text-lg font-normal">
             {fileName}
           </div>
             <img
@@ -62,14 +62,14 @@ const DocumentUpload = ({ title }) => {
         </div>
       ) : (
         <label className='cursor-pointer'>
-          <div className="w-[460px] h-[68px] bg-green-500 rounded-xl flex justify-between p-3 items-center">
+          <div className="w-[460px] min-h-[68px] bg-green-500 rounded-xl flex justify-between p-3 items-center">
             <input
               type="file"
               accept=".pdf"
               className="hidden"
               onChange={handleFileChange}
             />
-            <div className="w-[216px] h-6 text-black text-lg font-normal">
+            <div className="w-[216px] min-h-6 text-black text-lg font-normal">
               {fileName}
             </div>
             <img
