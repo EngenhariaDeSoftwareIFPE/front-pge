@@ -14,8 +14,7 @@ export default function Home() {
         <>
             <div className="w-screen h-screen font-monteserrat">
                 <NavBarHorizontal/>
-                <div className="flex">
-                    <NavBarVertical/>
+                <div className="flex flex-row-reverse justify-end">
                     <div className="flex-col">
                         <SliderWelcome/>
                         <div className="flex">
@@ -25,6 +24,7 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
+                    <NavBarVertical/>
                 </div>
             </div>
         </>

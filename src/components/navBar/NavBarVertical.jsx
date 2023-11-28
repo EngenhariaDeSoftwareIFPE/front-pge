@@ -17,7 +17,7 @@ const NavBarVertical = () => {
   const [menuItems] = useState([
     { label: 'Home', icon: 'ic-home.svg', link: '/home' },
     { label: 'Frequência', icon: 'ic-book.svg', link: '/frequencia' },
-    { label: 'Documentos', icon: 'ic-document.svg', link: '/documento' }
+    { label: 'Documentos', icon: 'ic-document.svg', link: '/documentos' }
   ]);
 
   const [currentPath, setCurrentPath] = useState('');
