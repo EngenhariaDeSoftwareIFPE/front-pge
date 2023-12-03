@@ -12,6 +12,7 @@ export default function SelectCadastreStudent(props) {
         options: props.options,
         student: props.student,
         setStudent: props.setStudent,
+        errors: props.errors,
     }
 
     const [selectedValue, setSelectedValue] = useState(data.placeHolder);
@@ -61,6 +62,16 @@ export default function SelectCadastreStudent(props) {
                         alt={isArrowUp ? "Seta para cima" : "Seta para baixo"}
                         className="w-[35px] h-[35px]"
                     />
+                </div>
+                <div className="relative">
+                    <img
+                        src="../shield_exclamation.svg"
+                        alt="Escudo exclamação"
+                        className={`${data.errors ? 'flex' : 'hidden'} absolute top-[2px]`}
+                    />
+                    <p className="text-red-error text-[12px] absolute left-[12px] top-0">
+                        {data.errors}
+                    </p>
                 </div>
             </div>
         </div>

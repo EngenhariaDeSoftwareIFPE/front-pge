@@ -36,8 +36,34 @@ const validateForm = (data) => {
 
 export default function FormLogin() {
     const router = useRouter();
+
     const [ user, setUser ] = useState(d.model)
+    const [ errors, setErrors ] = useState({});
     
+    // Função de validação formulário
+    const validateForm = (data) => {
+        // Limpa os erros
+        setErrors({});
+
+        const result = v.schema.safeParse(data);
+
+        if (result.success) {
+            return router.push(d.paths.home);
+        } else {
+            for (const fieldError of result.error.errors) {
+                const field = fieldError.path[0];
+
+                const errorMessage = fieldError.message
+                
+                setErrors((currentErrors) => ({
+                    ...currentErrors,
+                    [field]: errorMessage,
+                }));
+            }
+            return errors;
+        }
+    };
+
     return (
         <form 
             className="flex items-center justify-center flex-col w-full h-full"
@@ -45,6 +71,7 @@ export default function FormLogin() {
         >
             <label className="text-white text-[30px]">{d.data.login}</label>
             <InputLogin
+                errors={errors[d.email.id]}
                 id={d.email.id}
                 placeHolder={d.email.placeHolder}
                 marginTop={email.mt}
@@ -53,12 +80,15 @@ export default function FormLogin() {
                 setUser={setUser}
             />
             <InputLogin
+                errors={errors[d.password.id]}
                 id={d.password.id}
+                type={d.password.type}
                 placeHolder={d.password.placeHolder}
                 marginTop={password.mt}
                 marginBottom={password.mb}
                 user={user}
                 setUser={setUser}
+                showPasswordToggle
             />
             <a href={d.paths.passwordReset} className="w-[345px] text-end text-white font-monteserrat font-bold mb-[41px] hover:underline">{d.data.forgotPassword}</a>
             <ButtonSendAuth

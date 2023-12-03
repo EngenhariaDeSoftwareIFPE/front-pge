@@ -13,6 +13,7 @@ export const email = {
 export const password = {
     id: 'password',
     placeHolder: 'Senha',
+    type: 'password'
 } 
 
 export const button = {
@@ -26,6 +27,6 @@ export const model = {
 
 export const paths = {
     passwordReset: '/password_reset',
-    cadastre: '/cadastre/student',
+    cadastre: '/cadastre/estudante',
     home: '/home',
 }

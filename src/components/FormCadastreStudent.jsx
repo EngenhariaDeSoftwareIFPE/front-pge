@@ -7,10 +7,10 @@ import InputCadastreStudent from "./ui/InputCadastreStudent"
 import ButtonWhite from "./ui/ButtonWhite"
 import ButtonGreen from "./ui/ButtonGreen"
 import SelectCadastreStudent from "./ui/SelectCadastreStudent"
+import Modal from "./Modal";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Modal from "./Modal";
 
 //Medidas componentes
 const widths = {
@@ -41,18 +41,34 @@ const marginRight = {
 export default function FormCadastreStudent() {
     const router = useRouter();
     
-    const [showModal, setShowModal] = useState(false);
-    const [ student, setStudent ] = useState(d.model)
+    const [ showModal, setShowModal ] = useState(false);
+    const [ student, setStudent ] = useState(d.model);
+    const [ errors, setErrors ] = useState({});
     
     // Função de validação formulário
     const validateForm = (data) => {
+        // Limpa os erros
+        setErrors({});
+
         const result = v.schema.safeParse(data);
-    
+
         if (result.success) {
-            setShowModal(true);
-        }
-    }
+            return setShowModal(true);
+        } else {
+            for (const fieldError of result.error.errors) {
+                const field = fieldError.path[0];
+
+                const errorMessage = fieldError.message;
     
+                setErrors((currentErrors) => ({
+                    ...currentErrors,
+                    [field]: errorMessage,
+                }));
+            }
+            return errors;
+        }
+    };
+
     return (
         <form 
             className="w-[965px] h-[550px] px-[54px] py-[47px] mb-[49px]"
@@ -62,6 +78,7 @@ export default function FormCadastreStudent() {
             <h2 className="text-white text-[20px] font-medium">{d.data.subtitle}</h2>
             <div className="flex flex-row mt-[47px]">
                 <InputCadastreStudent
+                    errors={errors[d.fullName.id]}
                     id={d.fullName.id}
                     label={d.fullName.label}
                     placeHolder={d.fullName.placeHolder}
@@ -71,6 +88,7 @@ export default function FormCadastreStudent() {
                     setStudent={setStudent}
                 />
                 <InputCadastreStudent
+                    errors={errors[d.registrationNumber.id]}
                     id={d.registrationNumber.id}
                     label={d.registrationNumber.label}
                     placeHolder={d.registrationNumber.placeHolder}
@@ -81,6 +99,7 @@ export default function FormCadastreStudent() {
             </div>
             <div className="flex flex-row mt-[38px]">
                 <InputCadastreStudent
+                    errors={errors[d.email.id]}
                     id={d.email.id}
                     label={d.email.label}
                     placeHolder={d.email.placeHolder}
@@ -90,6 +109,7 @@ export default function FormCadastreStudent() {
                     setStudent={setStudent}
                 />
                 <SelectCadastreStudent
+                    errors={errors[d.course.id]}
                     id={d.course.id}
                     label={d.course.label}
                     placeHolder={d.course.placeHolder}
@@ -101,6 +121,8 @@ export default function FormCadastreStudent() {
             </div>
             <div className="flex flex-row mt-[38px] mb-[57px]">
                 <InputCadastreStudent
+                    errors={errors[d.password.id]}
+                    type={d.password.type}
                     id={d.password.id}
                     label={d.password.label}
                     placeHolder={d.password.placeHolder}
@@ -110,6 +132,8 @@ export default function FormCadastreStudent() {
                     setStudent={setStudent}
                 />
                 <InputCadastreStudent
+                    errors={errors[d.passwordConfirm.id]}
+                    type={d.passwordConfirm.type}
                     id={d.passwordConfirm.id}
                     label={d.passwordConfirm.label}
                     placeHolder={d.passwordConfirm.placeHolder}

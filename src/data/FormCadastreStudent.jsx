@@ -36,12 +36,14 @@ export const password = {
     id: 'password',
     label: 'Senha',
     placeHolder: 'Crie uma senha',
+    type: 'password',
 }
 
 export const passwordConfirm = {
     id: 'passwordConfirm',
     label: 'Confirme sua senha',
     placeHolder: 'Confirme sua senha',
+    type: 'password',
 }
 
 export const buttonWhite = {
