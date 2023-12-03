@@ -21,6 +21,7 @@ module.exports = {
         'gradient-secundary': '#CDF0D6',
         'primary-white': '#F1F2F5',
         'primary-gray': '#828282',
+        'red-error': '#C61849',
       },
       width: {
         '180px': '180px',
