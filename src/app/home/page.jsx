@@ -1,20 +1,27 @@
-import HoursChart from "@/components/HoursChart"
-import NavBarHorizontal from "@/components/navBar/NavBarHorizontal"
-import NavBarVertical from "@/components/navBar/NavBarVertical"
-import SliderWelcome from "@/components/SliderWelcome"
-import FrameLinks from "@/components/ui/FrameLinks"
+import React from 'react';
+import HoursChart from "@/components/HoursChart";
+import NavBarHorizontal from "@/components/navBar/NavBarHorizontal";
+import NavBarVertical from "@/components/navBar/NavBarVertical";
+import SliderWelcome from "@/components/SliderWelcome";
+import FrameLinks from "@/components/ui/FrameLinks";
 
 export const metadata = {
     title: 'PGE | Home',
     description: 'Home PGE',
-}
+};
 
-export default function Home() {
+const Home = () => {
     return (
         <>
             <div className="w-screen h-screen font-monteserrat">
-                <NavBarHorizontal/>
-                <div className="flex flex-row-reverse justify-end">
+                <NavBarHorizontal 
+                    elementos={[
+                    { title: 'Ver conteúdo', id: 'conteudo' },
+                    { title: 'Ir para menu', id: 'menu' },
+                    { title: 'Ir para perfil', id: 'perfil' }, 
+                    ]}
+                />
+                <div id="conteudo" className="flex flex-row-reverse justify-end">
                     <div className="flex-col">
                         <SliderWelcome/>
                         <div className="flex">
@@ -28,6 +35,7 @@ export default function Home() {
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
+export default Home;
