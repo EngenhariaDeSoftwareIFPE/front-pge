@@ -1,7 +1,6 @@
 import HandlePeople from '@/components/HandlePeople'
-import NavBarHorizontal from '@/components/navBar/NavBarHorizontal'
-import NavBarVertical from '@/components/navBar/NavBarVertical'
-import React from 'react'
+import NavBarHorizontal from "@/components/navBarSiec/NavBarHorizontal"
+import NavBarVertical from "@/components/navBarSiec/NavBarVertical"
 
 export const metadata = {
     title: 'PGE | Pessoas',
@@ -13,9 +12,9 @@ export default function Pessoas() {
         <>
             <div className="w-screen h-screen font-monteserrat">
                 <NavBarHorizontal/>
-                <div className="flex flex-row-reverse justify-end">
-                    <HandlePeople />
+                <div className="flex flex-row">
                     <NavBarVertical/>
+                    <HandlePeople />
                 </div>
             </div>
         </>

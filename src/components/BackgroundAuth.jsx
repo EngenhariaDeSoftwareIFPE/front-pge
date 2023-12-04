@@ -11,8 +11,8 @@ export default function BackgroundAuth({component}) {
                     src="logo-auth.svg" 
                     alt="Logo do Pge"
                 />
-                <p className="text-white text-[16px] font-monteserrat w-[298px]">{d.data.title}</p>
-                <p className="text-white text-[16px] font-monteserrat w-[298px]">{d.data.subtitle}</p>
+                <p className="text-white text-[16px] font-medium w-[320px]">{d.data.title}</p>
+                <p className="text-white text-[16px] font-medium w-[320px] text-center">{d.data.subtitle}</p>
             </div>
         </div>
     )

@@ -1,30 +1,50 @@
 import * as d from '../data/people'
 
 import InputSearchPeople from './ui/InputSearchPeople';
+import ButtonAddSignatorie from './ui/ButtonAddSignatorie';
 import CardPeople from './ui/CardPeople';
 
-export default function SignatoriesPeople() {
-    const renderStudents = (signatories) => {
-        return signatories.map((signatorie) => {
-            return (
-                <CardPeople
-                    name={signatorie.name}
-                    course={signatorie.course}
-                    registrationNumber={signatorie.registrationNumber}
-                />
-            )
-        })
-    }
+import { useState } from 'react';
 
-    return (
-        <div>
-            <InputSearchPeople
-                data={d.test2}
-                placeHolder={d.studentInputSearch.placeHolder}
+export default function SignatoriesPeople() {
+    const [handleSignatories, setHandleSignatories] = useState('');
+
+    const renderSignatories = (signatories) => {
+        const filteredSignatories = signatories
+            .filter((signatorie) => signatorie.name.toLowerCase().includes(handleSignatories.toLowerCase()))
+            .sort((a, b) => a.name.localeCompare(b.name));
+    
+        return filteredSignatories.map((signatorie) => (
+            <CardPeople
+                key={signatorie.registrationNumber}
+                name={signatorie.name}
+                sector={signatorie.sector}
+                course={signatorie.course}
+                registrationNumber={signatorie.registrationNumber}
             />
-            <div className='w-full flex flex-wrap'>
-                {renderStudents(d.test2)}
+        ));
+    }
+    return (
+        <div className='w-[1200px] mx-auto'>
+            <div className='grid grid-cols-3'>
+                <div className='col-span-1'>
+                    <InputSearchPeople
+                        id={d.signatorieInputSearch.id}
+                        handleSignatories={handleSignatories}
+                        setHandleSignatories={setHandleSignatories}
+                        placeHolder={d.signatorieInputSearch.placeHolder}
+                    />
+                </div>
+                <div className='col-span-1'></div>
+                <div className='col-span-1 flex justify-end'>
+                    <ButtonAddSignatorie/>
+                </div>
+            </div>
+    
+            <div className='flex flex-wrap justify-between'>
+                {renderSignatories(d.dataSignatorie)}
             </div>
         </div>
-    )
+    );
+    
 }
