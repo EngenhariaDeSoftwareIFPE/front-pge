@@ -32,6 +32,17 @@ export const course = {
     ],
 }
 
+export const funcao = {
+    id: 'funcao',
+    label: 'Função',
+    placeHolder: 'Selecione o sua função',
+    options: [
+        'Coordenador de curso',
+        'Coordenador de estágio',
+        'Diretor do SIEC',
+    ],
+}
+
 export const password = {
     id: 'password',
     label: 'Senha',
