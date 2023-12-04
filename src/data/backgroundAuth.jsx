@@ -1,4 +1,4 @@
 export const data = {
-    title: 'PORTAL DE GESTÃO DE ESTÁGIO:',
+    title: 'PORTAL DE GERENCIAMENTO DE ESTÁGIO:',
     subtitle: 'O ESTÁGIO NA PALMA DA SUA MÃO',
 }

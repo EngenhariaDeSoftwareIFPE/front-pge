@@ -3,6 +3,7 @@ export const data = {
     forgotPassword: 'Esqueceu a senha?',
     haveNotAccount: 'Não possui conta?',
     createAccount: 'Criar conta',
+    modal: 'Por diretrizes do sistema, apenas alunos podem se cadastrar diretamente aqui. Caso você não seja aluno e necessite ingressar na plataforma, procure o SIEC (Setor de Integração Escola Comunidade) e realize seu cadastro.'
 }
 
 export const email = {
