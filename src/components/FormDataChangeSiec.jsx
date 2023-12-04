@@ -5,7 +5,7 @@ import InputCadastreStudent from './ui/InputCadastreStudent';
 import * as d from "../data/formCadastreStudent";
 import ButtonGreen from './ui/ButtonGreen';
 import Modal from './Modal';
-import SelectCadastreStudent from './ui/SelectCadastreStudent';
+import SelectCadastreStudentSiec from './ui/SelectCadastreStudentSiec';
 
 const widths = {
     fullname: 'w-[440px]',
@@ -57,15 +57,6 @@ const FormDataChange = ({ onButtonClick }) => {
                     label={d.email.label}
                     placeHolder={d.email.placeHolder}
                     width={widths.email}
-                    student={student}
-                    setStudent={setStudent}
-                />
-                <SelectCadastreStudent
-                    id={d.course.id}
-                    label={d.course.label}
-                    placeHolder={d.course.placeHolder}
-                    options={d.course.options}
-                    width={widths.course}
                     student={student}
                     setStudent={setStudent}
                 />
