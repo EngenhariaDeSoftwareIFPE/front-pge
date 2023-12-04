@@ -13,7 +13,13 @@ const Frequencia = () => {
   return (
     <>
             <div className="w-screen h-screen font-monteserrat">
-                <NavBarHorizontal/>
+                <NavBarHorizontal 
+                    elementos={[
+                    { title: 'Ver conteúdo', id: 'conteudo' },
+                    { title: 'Ir para menu', id: 'menu' },
+                    { title: 'Ir para perfil', id: 'perfil' }, 
+                    ]}
+                />
                 <div className="flex flex-row-reverse justify-end">
                     <FrequencyTable/>
                     <NavBarVertical/>

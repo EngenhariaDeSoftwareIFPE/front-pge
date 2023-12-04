@@ -13,8 +13,14 @@ const Arquivos = () => {
   return (
     <>
             <div className="w-screen h-screen font-monteserrat">
-                <NavBarHorizontal/>
-                <div className="flex flex-row-reverse">
+                <NavBarHorizontal 
+                    elementos={[
+                    { title: 'Ver conteúdo', id: 'conteudo' },
+                    { title: 'Ir para menu', id: 'menu' },
+                    { title: 'Ir para perfil', id: 'perfil' }, 
+                    ]}
+                />
+                <div id='conteudo' className="flex flex-row-reverse">
                     <FilesDownload/>
                     <NavBarVertical/>
                 </div>

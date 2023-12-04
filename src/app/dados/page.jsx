@@ -11,7 +11,12 @@ const Dados = () => {
     return (
     <>
       <div className="w-screen h-screen font-monteserrat">
-        <NavBarHorizontal />
+        <NavBarHorizontal 
+            elementos={[
+            { title: 'Ver conteúdo', id: 'conteudo' },
+            { title: 'Ir para menu', id: 'menu' },
+            ]}
+        />
         <HandleUserData/>
       </div>
     </>

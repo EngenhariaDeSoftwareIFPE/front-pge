@@ -27,7 +27,7 @@ export default function HandlePeople() {
     }
     
     return (
-        <div className="flex flex-col w-screen max-h-[617px] overflow-y-auto">
+        <div className="flex flex-col w-screen max-h-[617px] overflow-y-auto" id='conteudo'>
             <div className="w-[280px] h-[45px] relative mx-auto mt-5">
                 <button onClick={() => handlePeoplePages(false)} className=" w-[140.44px] h-[45px] left-[139.56px] top-[-0px] absolute">
                     <div className={`w-[140.44px] h-[45px] left-[140.44px] top-[45px] absolute origin-top-left -rotate-180 bg-green-500 rounded-tl-xl rounded-bl-xl ${borderRecived}`} />

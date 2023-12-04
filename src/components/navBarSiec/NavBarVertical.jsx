@@ -30,7 +30,7 @@ const NavBarVertical = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="w-52 h-[617px] bg-green-500 flex flex-col justify-between">
+    <div id='menu' className="w-52 min-h-[617px] bg-green-500 flex flex-col justify-between">
       <div className="w-10/12 h-32 mt-14">
         <ul>
           {menuItems.map((item, index) => (

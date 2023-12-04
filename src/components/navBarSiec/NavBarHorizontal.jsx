@@ -1,13 +1,17 @@
 import React from 'react'
 
 import ProfileSiec from '../ui/ProfileSiec'
+import NavBarAcessibilidade from '../navBarAcessibilidade/NavBarAcessibilidade'
 
-const NavBarHorizontal = () => {
+const NavBarHorizontal = ({ elementos }) => {
   return (
     <div>
         <div className="w-full h-28 bg-green-900 flex justify-between items-center">
             <a href="/siec"><img src="pge_logo.png" alt="Logo do portal" className='w-40 ms-5' /></a>
-            <ProfileSiec/>
+            <NavBarAcessibilidade
+                elementos={elementos}
+            />
+            <ProfileSiec  />
         </div>
     </div>
   )

@@ -75,7 +75,7 @@ const FrequencyTable = () => {
   }
 
   return (
-    <div className="flex flex-col mt-10 m-auto w-1/2">
+    <div className="flex flex-col mt-10 m-auto w-1/2" id='conteudo'>
         <h2 className="mx-auto text-center text-black text-[22px] font-semibold">Histórico da frequência</h2>
         <div className='inline-block border shadow-2xl mt-8'>
             <table className="bg-white w-full border-4 border-green-500">
