@@ -14,7 +14,7 @@ export const signatorieInputSearch = {
 }
 
 export const dataStudent = [
-    {id: 1, name: 'Luiz Carlos', course: 'Técnico em Agropecuária', registrationNumber: '20221EWBJ0270'},
+    {id: 1, name: 'Luiz Carlos', course: 'Lic. em Música', registrationNumber: '20221EWBJ0270'},
     {id: 2, name: 'Carlos', course: 'Técnico em Agropecuária', registrationNumber: '20221EWBJ0270'},
     {id: 3, name: 'Antonio', course: 'Técnico em Agropecuária', registrationNumber: '20221EWBJ0270'},
     {id: 4, name: 'Joao', course: 'Técnico em Agropecuária', registrationNumber: '20221EWBJ0270'},

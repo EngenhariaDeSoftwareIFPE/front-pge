@@ -18,7 +18,7 @@ const NavBarVertical = () => {
     { label: 'Home', icon: 'ic-home.svg', link: '/siec' },
     { label: 'Pessoas', icon: 'ic-user.svg', link: '/pessoas' },
     { label: 'Estágios', icon: 'ic-physics.svg', link: '/estagios' },
-    { label: 'Arquivos', icon: 'ic-folder.svg', link: '/arquivos' }
+    { label: 'Arquivos', icon: 'ic-folder.svg', link: '/arquivos_siec' }
   ]);
 
   const [currentPath, setCurrentPath] = useState('');
