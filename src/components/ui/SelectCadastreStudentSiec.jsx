@@ -13,6 +13,7 @@ export default function SelectCadastreStudentSiec(props) {
         student: props.student,
         setStudent: props.setStudent,
         errors: props.errors,
+        ml: props.ml
     }
 
     const [selectedValue, setSelectedValue] = useState(data.placeHolder);
@@ -41,13 +42,13 @@ export default function SelectCadastreStudentSiec(props) {
     };
 
     return (
-        <div className="relative inline-block">
+        <div className={`relative inline-block ${data.ml}`}>
             <label className="text-[18px] text-white font-medium">
                 {data.label}
             </label>
             <div className="relative">
                 <select 
-                    className={`${data.width} ${data.mr} h-[40px] rounded-[12px] appearance-none px-[20px] hover:border-b-2 border-secundary-green transition duration-300 ease-in-out ${selectedValue == data.placeHolder ? 'dark:text-primary-gray' : 'dark:text-black'}`}
+                    className={`${data.width} ${data.mr}  h-[40px] rounded-[12px] appearance-none px-[20px] hover:border-b-2 border-secundary-green transition duration-300 ease-in-out ${selectedValue == data.placeHolder ? 'dark:text-primary-gray' : 'dark:text-black'}`}
                     id={data.id}
                     value={selectedValue} 
                     onChange={handleChange}
